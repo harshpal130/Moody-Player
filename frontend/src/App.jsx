@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import FaceExpressionDetector from './components/FaceExpressionDetector'
-import MoodSongs from './components/MoodSongs'
+import { useState } from "react";
+import FaceExpressionDetector from "./components/FaceExpressionDetector";
+import MoodSongs from "./components/MoodSongs";
+import "./App.css";
 
 function App() {
-  const [Songs , setSongs] = useState([
-      ])
-  
+  const [songs, setSongs] = useState([]);
 
   return (
-    <>
-      <FaceExpressionDetector setSongs={setSongs}/>
-      <MoodSongs Songs={Songs}/>
-    </>
-  )
+    <div className="app">
+      <h1 className="app-title">🎧 Moody Player</h1>
+
+      <div className="top-section">
+        <FaceExpressionDetector setSongs={setSongs} />
+      </div>
+
+      <div className="bottom-section">
+        <MoodSongs Songs={songs} />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

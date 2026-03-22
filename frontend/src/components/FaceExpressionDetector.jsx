@@ -12,7 +12,7 @@ export default function FaceExpressionDetector({setSongs}) {
   }, []);
 
   const loadModels = async () => {
-    const MODEL_URL = "/models";
+    const MODEL_URL = "/Moody-Player/models";
     await Promise.all([
       faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
       faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),

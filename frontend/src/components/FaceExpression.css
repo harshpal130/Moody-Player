@@ -1,24 +1,41 @@
-.user-video-feed{
-    width: 25rem;
-    aspect-ratio: 16/9;
-    border-radius: 20px;
-    object-fit: cover;
+.mood-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-.mood-element{
-    width: 100px;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    justify-content: flex-start;
-    padding: 5rem;
+/* Video styling */
+.user-video-feed {
+  width: 320px;
+  height: 240px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  border: 2px solid #8b005d;
 }
-.mood-element button{
-    padding: 0.7rem 4rem ;
-    border-radius: 0.9rem;
-    border: none;
-    background-color: rgb(113, 6, 72);
-    color: white;
-    cursor: pointer;
-    
+
+/* Button */
+.mood-element button {
+  background: linear-gradient(135deg, #8b005d, #c2185b);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mood-element button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(194, 24, 91, 0.6);
+}
+
+/* Expression text */
+.mood-element h2 {
+  font-size: 1.5rem;
+  color: #ff4da6;
 }
