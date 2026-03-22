@@ -48,7 +48,7 @@ export default function FaceExpressionDetector({setSongs}) {
       setExpression(
         mood
       );
-      const res = await axios.get(`https://moody-player-rpqt.onrender.com/songs`)
+      const res = await axios.get(`https://moody-player-rpqt.onrender.com/songs?mood=${mood}`)
 
       .then(response=>{
         console.log(response.data);
