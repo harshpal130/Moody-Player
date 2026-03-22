@@ -37,16 +37,28 @@ router.post('/', upload.single("audio"),  async(req, res)=>{     // ye api song 
 
 });
 
-router.get('/', async(req, res)=>{
-    const {mood} = req.query;
-    const songs = await songModel.find({
-        mood:mood
-    })
+router.get('/', async (req, res) => {
+  try {
+    const { mood } = req.query;
+
+    if (!mood) {
+      return res.status(400).json({ message: "Mood is required" });
+    }
+
+    const songs = await songModel.find({ mood });
 
     res.status(200).json({
-        message : "songs fetch successfully",
-        songs
-    })
-})
+      message: "songs fetch successfully",
+      songs
+    });
+
+  } catch (err) {
+    console.error("FETCH ERROR:", err);
+    res.status(500).json({
+      message: "Internal Server Error",
+      error: err.message
+    });
+  }
+});
 
 module.exports = router

@@ -6,6 +6,9 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
+
+
+
 app.use('/songs', songRoutes)  //  isko is lay use kiye hai jisse express ko pata chle kuch aur api create hue hai 
 
 // app.use("/songs", require("./routes/song.route"));
